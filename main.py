@@ -14,7 +14,6 @@ app.config['RC_OAUTH_CLIENT_ID'] = os.environ.get('RC_OAUTH_CLIENT_ID')
 app.config['RC_OAUTH_CLIENT_SECRET'] = os.environ.get('RC_OAUTH_CLIENT_SECRET')
 app.config['SESSION_SECRET'] = os.environ.get('SESSION_SECRET')
 
-print(app.config['RC_OAUTH_CLIENT_ID'], app.config['RC_OAUTH_CLIENT_SECRET'])
 sessions = {}
 
 @app.route('/', methods=['GET'])
@@ -111,4 +110,4 @@ def get_user(access_token):
 if __name__ == '__main__':
     app.debug = True
     app.secret_key = app.config['SESSION_SECRET']
-    app.run(host='0.0.0.0', port=6060)
+    app.run(host='0.0.0.0', port=os.environ.get('PORT'))
