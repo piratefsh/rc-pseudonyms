@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['RC_API_URI'] = 'http://www.recurse.com/api/v1'
 app.config['RC_OAUTH_AUTH_URI'] = 'https://www.recurse.com/oauth/authorize'
 app.config['RC_OAUTH_TOKEN_URI'] = 'https://www.recurse.com/oauth/token'
-app.config['RC_OAUTH_REDIRECT_AUTH_URI'] = 'http://localhost:6060/access_token'
+app.config['RC_OAUTH_REDIRECT_AUTH_URI'] = os.environ.get('RC_OAUTH_REDIRECT_AUTH_URI')
 
 app.config['RC_OAUTH_CLIENT_ID'] = os.environ.get('RC_OAUTH_CLIENT_ID')
 app.config['RC_OAUTH_CLIENT_SECRET'] = os.environ.get('RC_OAUTH_CLIENT_SECRET')
