@@ -34,7 +34,7 @@ def index():
 
 
 @app.route('/access_token', methods=['GET', 'POST'])
-def show():
+def access_token():
     code = request.args.get('code')
     params = {
         'client_id': app.config['RC_OAUTH_CLIENT_ID'],
