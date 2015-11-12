@@ -1,8 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body{
-    color: #333;
+    color: #444;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    padding-top: 40px;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 h2, h3{
@@ -10,9 +16,39 @@ h2, h3{
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
+a {
+    color: #61ae24;
+    text-decoration: none;
+}
+
+a:visited, a:hover, a:focus {
+    color: #53961f;
+}
+
+header {
+    display: flex;
+}
+
+header img {
+    height: 70px;
+}
+
+header > div:first-child{
+    margin-right: 30px;
+}
+
+header > div:nth-child(2) {
+    flex: 1;
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.description {
+    margin-top: 8px;
+    font-size: 0.9em
 }
 
 .batch {

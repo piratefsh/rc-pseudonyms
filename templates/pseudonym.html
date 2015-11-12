@@ -8,7 +8,15 @@
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"></head>
 <body>
     <div class="container">
-        <h1><img src="{{ url_for('static', filename='rc-logo-sm.png') }}"/> Recurse Center Pseudonyms</h1>
+        <header>
+            <div>
+                <img src="{{ url_for('static', filename='rc-logo-sm.png') }}"/> 
+            </div>
+            <div>
+                <h1>Recurse Center Pseudonyms</h1>
+                <p class="description">Automatically generated pseudonyms for Recursers' applications. <a href="https://www.recurse.com/blog/43-building-a-better-and-more-diverse-community" target="_blank">Why do we have pseudonyms?</a></p>
+            </div>
+        </header>
 
        <!--  <h2>
             <span class="user-pseudonym">Hello {{user['pseudonym']}}</span>
