@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recurse Center Pseudonyms</title>
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet"/>
+    <!-- Styles -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+    <div class="container">
+        <h1><img src="{{ url_for('static', filename='rc-logo-sm.png') }}"/> Recurse Center Pseudonyms</h1>
+
+       <!--  <h2>
+            <span class="user-pseudonym">Hello {{user['pseudonym']}}</span>
+            <br/>
+            <small class="real-name">a.k.a {{user["first_name"]}} {{user["last_name"]}}</small>
+        </h2> -->
+        {% for batch_name, batch in batches %}
+        <div class="batch">
+            <h3 class="batch-name">{{batch_name}}</h3>
+            <ul>
+                {% for person in batch %}
+                <li>
+                    <img src="{{person['image']}}"/> <strong>{{person.pseudonym}}</strong>
+                    <div>{{person.first_name}} {{person.last_name}}</div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
