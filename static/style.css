@@ -91,7 +91,8 @@ header > div:nth-child(2) {
 
 .batch ul li img {
     display: block;
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    max-width: 100%
 }
 
 .batch-name {
@@ -101,4 +102,14 @@ header > div:nth-child(2) {
 
 .hide {
     display: none !important;
+}
+
+@media(max-width: 768px){
+    body {
+        padding: 10px 20px;
+    }
+    .batch ul li {
+        width: 130px;
+        margin-right: 10px;
+    }
 }
