@@ -6,36 +6,47 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet"/>
     <!-- Styles -->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"></head>
+</head>
 <body>
     <div class="container">
         <header>
             <div>
-                <img src="{{ url_for('static', filename='rc-logo-sm.png') }}"/> 
+                <img src="{{ url_for('static', filename='rc-logo-sm.png') }}"/>
             </div>
             <div>
                 <h1>Recurse Center Pseudonyms</h1>
-                <p class="description">Automatically generated pseudonyms for Recursers' applications. <a href="https://www.recurse.com/blog/43-building-a-better-and-more-diverse-community" target="_blank">Why do we have pseudonyms?</a></p>
+                <p class="description">
+                    Automatically generated pseudonyms for Recursers' applications.
+                    <a href="https://www.recurse.com/blog/43-building-a-better-and-more-diverse-community" target="_blank">Why do we have pseudonyms?</a>
+                </p>
             </div>
-        </header>
 
-       <!--  <h2>
-            <span class="user-pseudonym">Hello {{user['pseudonym']}}</span>
-            <br/>
-            <small class="real-name">a.k.a {{user["first_name"]}} {{user["last_name"]}}</small>
-        </h2> -->
+        </header>
+        <div class="controls">
+            Filter: 
+            <input type='text' id='input-search'/>
+        </div>
+    </div>
+    <div class="container">
         {% for batch_name, batch in batches %}
         <div class="batch">
             <h3 class="batch-name">{{batch_name}}</h3>
             <ul>
                 {% for person in batch %}
                 <li>
-                    <img src="{{person['image']}}"/> <strong>{{person.pseudonym}}</strong>
-                    <div>{{person.first_name}} {{person.last_name}}</div>
+                    <div>
+                        <img src="{{person['image']}}"/> <strong class="pseudonym">{{person.pseudonym}}</strong>
+                        <div class="real-name">{{person.first_name}} {{person.last_name}}</div>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
         </div>
         {% endfor %}
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
 </body>
 </html>

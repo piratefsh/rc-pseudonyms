@@ -60,6 +60,10 @@ def show():
 
 @app.route('/pseudonyms', methods=['GET'])
 def pseudonyms():
+
+    if 'user' not in session or session['user'] not in sessions:
+        return redirect(url_for('index'))
+
     user = session['user']
     token = sessions[user]
     if user in sessions:
@@ -72,7 +76,7 @@ def pseudonyms():
 
         # get people from all batches
         batch_people = [(batch["name"],get_batch(token, batch["id"])) for batch in batches]
-        
+
         return render_template('pseudonym.html', batches=batch_people, user=u)
     else:
         return redirect(url_for('index'))

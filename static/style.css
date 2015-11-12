@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+:root {
+  --primary-color: #61ae24;
+}
+
 body{
     color: #444;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
@@ -46,6 +50,10 @@ header > div:nth-child(2) {
     margin: 0 auto;
 }
 
+.controls {
+    margin: 20px 0px;
+}
+
 .description {
     margin-top: 8px;
     font-size: 0.9em
@@ -68,6 +76,17 @@ header > div:nth-child(2) {
     width: 180px;
     margin-bottom: 20px;
     font-size: 0.9em;
+    padding: 20px 0px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.batch ul li > div{
+    text-align: left;
+    display: inline-block;
+}
+
+.batch ul li:hover {
+    background-color: #eee;
 }
 
 .batch ul li img {
@@ -78,4 +97,8 @@ header > div:nth-child(2) {
 .batch-name {
     border-bottom: 1px solid #aaa;
     padding-bottom: 10px
+}
+
+.hide {
+    display: none !important;
 }
