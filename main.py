@@ -63,10 +63,16 @@ def pseudonyms():
     user = session['user']
     token = sessions[user]
     if user in sessions:
+        # get user
         u = get_user(token)
         user_pseudonym = u['pseudonym']
+
+        # get list of batches
         batches = get_batches(token)
+
+        # get people from all batches
         batch_people = [(batch["name"],get_batch(token, batch["id"])) for batch in batches]
+        
         return render_template('pseudonym.html', batches=batch_people, user=u)
     else:
         return redirect(url_for('index'))
