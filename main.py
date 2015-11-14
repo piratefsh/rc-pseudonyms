@@ -111,5 +111,4 @@ if __name__ == '__main__':
     app.debug = True
     app.secret_key = app.config['SESSION_SECRET']
     port = int(os.environ.get('PORT'))
-    print('on port %s' % port)
     app.run(host='0.0.0.0', port=port)
